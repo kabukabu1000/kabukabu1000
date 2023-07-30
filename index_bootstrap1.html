@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="300; URL=http://127.0.0.1:3000/index.html"> <!--300sごとに更新-->
+    <!--tablesorter&jqueryスタイルシートはcssで色変えれなくなるしbootstrapと競合するので削除 -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.widgets.min.js"></script>
+    <!--bootstrap-->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        
+        <title>My Website</title>
+    <!--CSSで列の幅を指定 aタグにwidthを指定したのに効かないのはaタグはインライン要素であり、そのままでは横幅を調整するCSSである「width」が効きません　display:inline-blockを指定したaタグにする。-->
+    <style>
+ </style>
+ <style>
+  #myTable {
+    border-collapse: collapse; /* テーブルの罫線を重ねる */
+    /* background-color: #686363; テーブルの背景色をライトグレーに変更 */
+  }
+
+  /* #myTable th {
+    background-color: pink; テーブルヘッダーの背景色をピンクに変更
+  } */
+  #myTable th {
+    background-color: rgb(12, 115, 231); 
+  }
+  #myTable tr {
+    background-color: rgb(199, 203, 221); /* テーブルの行の背景色をRGB値(105, 106, 110)に変更 */
+  }
+  #myTable td a{
+  width: 300px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    color: rgb(12, 162, 231); /* テーブルの行の背景色をRGB値(105, 106, 110)に変更 */
+
+  }
+</style>
+  </head>
+  <body>
+    <a href="tdnet.html" style="font-size: 6px; float: right;">TDNET</a>
+    <table border="1" id="myTable" class="mytable" style="background-color: #686363"> <!--<th>罫線の太さが1ピクセル-->
+      <thead>            <!--<th>tablesorterはtheadタグとtbodyタグで分けないと動かない-->
+        <tr>
+          <th>Name</th>  <!--<th>要素はテーブルのヘッダーを定義するために使用-->
+          <th>date</th>  
+          <th>title</th>
+          <th>url</th>
+          <!-- <th>
+            <select id="mySelect">
+              <option value="">選択してください</option>
+              <option value="option1">globenewswire</option>
+              <option value="option2">seeking_alpha</option>
+              <option value="option3">オプション3</option>
+            </select>
+          </th> -->
+        </tr>
+      </thead>
+      <tbody><tr>
+    <td>seeking_alpha</td>
+    <td>2023/03/11 12:20</td>
+    <td>Acadia wins FDA nod for Rett syndrome therapy
+</td>
+    <td><a href=https://finance.yahoo.com/quote/ACAD target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/ACAD</a></td>
+    </tr><tr>
+    <td>seeking_alpha</td>
+    <td>2023/03/11 11:26</td>
+    <td>シリコンバレー銀行へのエクスポージャーを持つバイオテクノロジー企業では、Sangamo、Protagonist、Eigerがある。</td>
+    <td><a href=https://finance.yahoo.com/quote/SGMO target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/SGMO</a></td>
+    </tr><tr>
+    <td>seeking_alpha</td>
+    <td>2023/03/11 09:44</td>
+    <td>SciSparc、ナスダック上場不備通知書を取得</td>
+    <td><a href=https://finance.yahoo.com/quote/A target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/A</a></td>
+    </tr><tr>
+    <td>seeking_alpha</td>
+    <td>2023/03/11 08:33</td>
+    <td>Insulet jumps 8% as it moves to S&P 500 to fill SVB hole
+</td>
+    <td><a href=https://finance.yahoo.com/quote/PODD target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/PODD</a></td>
+    </tr><tr>
+    <td>seeking_alpha</td>
+    <td>2023/03/11 07:31</td>
+    <td>SVBへのエクスポージャーがないバイオテックに、Cara、Iovance、Karyopharmが登場（更新）</td>
+    <td><a href=https://finance.yahoo.com/quote/CDMO target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/CDMO</a></td>
+    </tr><tr>
+    <td>seeking_alpha</td>
+    <td>2023/03/11 06:48</td>
+    <td>キロミックバイオファーマ、1株につき30株の株式併合を発表</td>
+    <td><a href=https://finance.yahoo.com/quote/KRBP target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/KRBP</a></td>
+    </tr><tr>
+    <td>seeking_alpha</td>
+    <td>2023/03/11 06:20</td>
+    <td>Axsome Therapeutics、SVBに「重要な」預託金があるとの開示で下落</td>
+    <td><a href=https://finance.yahoo.com/quote/AXSM target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/AXSM</a></td>
+    </tr><tr>
+    <td>seeking_alpha</td>
+    <td>2023/03/11 06:10</td>
+    <td>Gritstone bio closes down 8%; has small cash position, loan agreement with SVB Financial
+</td>
+    <td><a href=https://finance.yahoo.com/quote/GRTS target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/GRTS</a></td>
+    </tr><tr>
+    <td>seeking_alpha</td>
+    <td>2023/03/11 05:07</td>
+    <td>リズムファーマはSVBファイナンシャルに3.4Mドルの預金を預けている</td>
+    <td><a href=https://finance.yahoo.com/quote/RYTM target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/RYTM</a></td>
+    </tr><tr>
+    <td>seeking_alpha</td>
+    <td>2023/03/11 04:36</td>
+    <td>Eisai expects $7B sales from Biogen-partnered Alzheimer’s therapy in 2030
+</td>
+    <td><a href=https://finance.yahoo.com/quote/BIIB target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/BIIB</a></td>
+    </tr><tr>
+    <td>globenewswire</td>
+    <td>2023/03/12 03:21</td>
+    <td>Ventyx Biosciences、Silicon Valley Bankの金融事故に関する最新情報を提供します。</td>
+    <td><a href=https://finance.yahoo.com/quote/VTYX target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/VTYX</a></td>
+    </tr><tr>
+    <td>globenewswire</td>
+    <td>2023/03/12 01:24</td>
+    <td>Agenus、SVBにおける少数株主の現金保有について電話会議を開催</td>
+    <td><a href=https://finance.yahoo.com/quote/AGEN target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/AGEN</a></td>
+    </tr><tr>
+    <td>seeking_alpha</td>
+    <td>2023/03/11 03:02</td>
+    <td>米国、中国からの旅行者へのCOVID検査義務付けを終了</td>
+    <td><a href=https://finance.yahoo.com/quote/CEAYY target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/CEAYY</a></td>
+    </tr><tr>
+    <td>globenewswire</td>
+    <td>2023/03/11 21:00</td>
+    <td>Cytovance Biologics社とPhenotypeca社、微生物バイオ製造のためのSaccharomyces cerevisiae株開発の強化で協業</td>
+    <td><a href=https://www.globenewswire.com/news-release/2023/03/11/2625287/0/en/Cytovance-Biologics-and-Phenotypeca-Collaborate-to-Enhance-Saccharomyces-cerevisiae-Strain-Development-for-Microbial-Biomanufacturing.html target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://www.globenewswire.com/news-release/2023/03/11/2625287/0/en/Cytovance-Biologics-and-Phenotypeca-Collaborate-to-Enhance-Saccharomyces-cerevisiae-Strain-Development-for-Microbial-Biomanufacturing.html</a></td>
+    </tr><tr>
+    <td>seeking_alpha</td>
+    <td>2023/03/11 02:20</td>
+    <td>ロケット・ファーマシューティカルズは、シリコンバレー銀行に現金、有価証券を保有していない。</td>
+    <td><a href=https://finance.yahoo.com/quote/RCKT target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/RCKT</a></td>
+    </tr><tr>
+    <td>globenewswire</td>
+    <td>2023/03/11 12:15</td>
+    <td>Tango Therapeutics、シリコンバレー銀行への限定的なエクスポージャーを発表</td>
+    <td><a href=https://finance.yahoo.com/quote/TNGX target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/TNGX</a></td>
+    </tr><tr>
+    <td>seeking_alpha</td>
+    <td>2023/03/11 02:10</td>
+    <td>注目銘柄です。WPM、FIZZが決算で上昇、GPSとTGTXが下落、PTONが特許訴訟で下落</td>
+    <td><a href=https://finance.yahoo.com/quote/PTON target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/PTON</a></td>
+    </tr><tr>
+    <td>BioStock</td>
+    <td>RT</td>
+    <td>SIVB関連の出願が相次ぐ</td>
+    <td><a href=https://finance.yahoo.com/quote/SIVB target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/SIVB</a></td>
+    </tr><tr>
+    <td>globenewswire</td>
+    <td>2023/03/11 10:36</td>
+    <td>ラコビナ・セラピューティクス・インク（Rakovina Therapeutics Inc. 新株予約権の有効期限の延長を申請する計画を発表</td>
+    <td><a href=https://www.globenewswire.com/news-release/2023/03/11/2625267/0/en/Rakovina-Therapeutics-Inc-Announces-Plan-to-Apply-to-Extend-Warrant-Expiry-Dates.html target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://www.globenewswire.com/news-release/2023/03/11/2625267/0/en/Rakovina-Therapeutics-Inc-Announces-Plan-to-Apply-to-Extend-Warrant-Expiry-Dates.html</a></td>
+    </tr><tr>
+    <td>seeking_alpha</td>
+    <td>2023/03/11 01:50</td>
+    <td>Modernaが西海岸での事業拡大を発表、2023年には2K人の従業員を雇用へ</td>
+    <td><a href=https://finance.yahoo.com/quote/MRNA target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/MRNA</a></td>
+    </tr><tr>
+    <td>BioStock</td>
+    <td>2023/03/11 11:03</td>
+    <td>SIVB SVBのメルトダウンが、資金不足のバイオテクノロジー業界に新たな打撃を与える $XBI</td>
+    <td><a href=https://finance.yahoo.com/quote/SIVB target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/SIVB</a></td>
+    </tr><tr>
+    <td>globenewswire</td>
+    <td>2023/03/11 09:45</td>
+    <td>イミックス・バイオファーマ、シリコンバレー銀行およびシルバーゲート銀行との取引はないことを確認</td>
+    <td><a href=https://finance.yahoo.com/quote/IMMX target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/IMMX</a></td>
+    </tr><tr>
+    <td>seeking_alpha</td>
+    <td>2023/03/11 01:19</td>
+    <td>Olema Oncology cuts 25% of workforce as part of restructuring
+</td>
+    <td><a href=https://finance.yahoo.com/quote/OLMA target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/OLMA</a></td>
+    </tr><tr>
+    <td>BioStock</td>
+    <td>2023/03/11 11:05</td>
+    <td>S&P500のSVBファイナンシャルに代わってインスレットが採用される $POOD $SIVB</td>
+    <td><a href=https://finance.yahoo.com/quote/POOD target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/POOD</a></td>
+    </tr><tr>
+    <td>BioStock</td>
+    <td>2023/03/11 11:07</td>
+    <td>英中央銀行がシリコンバレーバンクUKを債務超過にすることが決まった。ドルSIVB</td>
+    <td><a href=https://finance.yahoo.com/quote/SIVB target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/SIVB</a></td>
+    </tr><tr>
+    <td>globenewswire</td>
+    <td>2023/03/11 09:10</td>
+    <td>Mersana Therapeutics、SVBについて声明を発表</td>
+    <td><a href=https://finance.yahoo.com/quote/MRSN target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/MRSN</a></td>
+    </tr><tr>
+    <td>BioStock</td>
+    <td>2023/03/11 21:43</td>
+    <td>ROKU ロクは$SIVBで4億8700万円の現金を持っていた 😬。</td>
+    <td><a href=https://finance.yahoo.com/quote/ROKU target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/ROKU</a></td>
+    </tr><tr>
+    <td>seeking_alpha</td>
+    <td>2023/03/11 00:59</td>
+    <td>Chimerixは、SVBの流動性リスクへのエクスポージャーは "重要でない "と述べている。</td>
+    <td><a href=https://finance.yahoo.com/quote/CMRX target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/CMRX</a></td>
+    </tr><tr>
+    <td>globenewswire</td>
+    <td>2023/03/11 09:10</td>
+    <td>ベターライフ、投資口募集のための修正公募書類を提出</td>
+    <td><a href=https://www.globenewswire.com/news-release/2023/03/11/2625257/0/en/BetterLife-Files-Amended-and-Restated-Offering-Document-for-Offering-of-Units.html target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://www.globenewswire.com/news-release/2023/03/11/2625257/0/en/BetterLife-Files-Amended-and-Restated-Offering-Document-for-Offering-of-Units.html</a></td>
+    </tr><tr>
+    <td>seeking_alpha</td>
+    <td>2023/03/10 23:47</td>
+    <td>SQI Diagnostics社がPivot社からさらに50万ドルのクレジットファシリティを付与されました。</td>
+    <td><a href=https://finance.yahoo.com/quote/SQIDF target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/SQIDF</a></td>
+    </tr><tr>
+    <td>BioStock</td>
+    <td>2023/03/11 23:20</td>
+    <td>SVBの終焉で空売りが5億円儲ける。$SIVB 課題は、いかにしてポジションを閉じるか。   SVBCクラッシュ</td>
+    <td><a href=https://t.co/7QSf2Ht8mF target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://t.co/7QSf2Ht8mF</a></td>
+    </tr><tr>
+    <td>globenewswire</td>
+    <td>2023/03/11 08:44</td>
+    <td>アプトーズ、シリコンバレー銀行への重要でない財務的エクスポージャーの報告について</td>
+    <td><a href=https://finance.yahoo.com/quote/APTO target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/APTO</a></td>
+    </tr><tr>
+    <td>BioStock</td>
+    <td>2023/03/12 07:17</td>
+    <td>過去10年以上で最大級の米国銀行の経営破綻で、SVBの預金者、投資家は木曜日に420億ドルを引き出そうとした。SIVB SVBCollapse</td>
+    <td><a href=https://t.co/jupFUQ36a9 target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://t.co/jupFUQ36a9</a></td>
+    </tr><tr>
+    <td>seeking_alpha</td>
+    <td>2023/03/10 23:23</td>
+    <td>インターセプト、5月にNASH候補のFDA AdComミーティングに臨む。</td>
+    <td><a href=https://finance.yahoo.com/quote/ICPT target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/ICPT</a></td>
+    </tr><tr>
+    <td>globenewswire</td>
+    <td>2023/03/11 06:45</td>
+    <td>フロリダメディカルクリニックシステムサイバー攻撃に関するお知らせ</td>
+    <td><a href=https://www.globenewswire.com/news-release/2023/03/10/2625209/0/en/Notice-of-Florida-Medical-Clinic-System-Cyberattack.html target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://www.globenewswire.com/news-release/2023/03/10/2625209/0/en/Notice-of-Florida-Medical-Clinic-System-Cyberattack.html</a></td>
+    </tr><tr>
+    <td>seeking_alpha</td>
+    <td>2023/03/10 23:13</td>
+    <td>Seelosの株価が下落、〜$11.2Mの株式とワラントの直接募集で</td>
+    <td><a href=https://finance.yahoo.com/quote/SEEL target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/SEEL</a></td>
+    </tr><tr>
+    <td>globenewswire</td>
+    <td>2023/03/11 06:37</td>
+    <td>Crinetics Pharmaceuticals、ナスダック上場規則5635(c)(4)に基づく誘引付与を発表</td>
+    <td><a href=https://finance.yahoo.com/quote/CRNX target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/CRNX</a></td>
+    </tr><tr>
+    <td>globenewswire</td>
+    <td>2023/03/11 06:15</td>
+    <td>サイスパック・リミテッド ナスダックの最低入札価格通知の受領について</td>
+    <td><a href=https://finance.yahoo.com/quote/SPRC target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/SPRC</a></td>
+    </tr><tr>
+    <td>globenewswire</td>
+    <td>2023/03/11 06:05</td>
+    <td>シングレート・インク（Cingulate Inc. 2022年第4四半期および通年の決算報告と臨床およびビジネスに関する最新情報のお知らせ</td>
+    <td><a href=https://finance.yahoo.com/quote/CING target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/CING</a></td>
+    </tr><tr>
+    <td>globenewswire</td>
+    <td>2023/03/11 06:01</td>
+    <td>インテリジェント・バイオ・ソリューションズ社（Intelligent Bio Solutions Inc. 255万ドルの公募増資の完了と引受人の追加購入オプションの完全行使を発表</td>
+    <td><a href=https://finance.yahoo.com/quote/INBS target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://finance.yahoo.com/quote/INBS</a></td>
+    </tr><tr>
+    <td>globenewswire</td>
+    <td>2023/03/11 03:00</td>
+    <td>2023年3月8日開催の臨時株主総会の結果について</td>
+    <td><a href=https://www.globenewswire.com/news-release/2023/03/10/2625125/0/en/Results-of-Extraordinary-Shareholders-Meeting-held-on-March-8-2023.html target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://www.globenewswire.com/news-release/2023/03/10/2625125/0/en/Results-of-Extraordinary-Shareholders-Meeting-held-on-March-8-2023.html</a></td>
+    </tr><tr>
+    <td>globenewswire</td>
+    <td>2023/03/11 03:00</td>
+    <td>2023年3月8日開催の臨時株主総会結果</td>
+    <td><a href=https://www.globenewswire.com/news-release/2023/03/10/2625125/0/fr/Assembl%C3%A9e-G%C3%A9n%C3%A9rale-Extraordinaire-du-8-mars-2023-r%C3%A9sultats.html target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://www.globenewswire.com/news-release/2023/03/10/2625125/0/fr/Assembl%C3%A9e-G%C3%A9n%C3%A9rale-Extraordinaire-du-8-mars-2023-r%C3%A9sultats.html</a></td>
+    </tr><tr>
+    <td>globenewswire</td>
+    <td>2023/03/11 02:10</td>
+    <td>エシロール・ルキソティカ：2022年世界登録文書提出</td>
+    <td><a href=https://www.globenewswire.com/news-release/2023/03/10/2625117/0/en/EssilorLuxottica-2022-Universal-Registration-Document-filed.html target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://www.globenewswire.com/news-release/2023/03/10/2625117/0/en/EssilorLuxottica-2022-Universal-Registration-Document-filed.html</a></td>
+    </tr><tr>
+    <td>globenewswire</td>
+    <td>2023/03/11 02:10</td>
+    <td>EssilorLuxottica：ユニバーサル登録文書2022を公開しました。</td>
+    <td><a href=https://www.globenewswire.com/news-release/2023/03/10/2625117/0/fr/EssilorLuxottica-Mise-%C3%A0-disposition-du-Document-d-enregistrement-universel-2022.html target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://www.globenewswire.com/news-release/2023/03/10/2625117/0/fr/EssilorLuxottica-Mise-%C3%A0-disposition-du-Document-d-enregistrement-universel-2022.html</a></td>
+    </tr><tr>
+    <td>globenewswire</td>
+    <td>2023/03/11 21:00</td>
+    <td>Cytovance Biologics社とPhenotypeca社、微生物バイオ製造のためのSaccharomyces cerevisiae株開発の強化で協業</td>
+    <td><a href=https://www.globenewswire.com/news-release/2023/03/11/2625287/0/en/Cytovance-Biologics-and-Phenotypeca-Collaborate-to-Enhance-Saccharomyces-cerevisiae-Strain-Development-for-Microbial-Biomanufacturing.html target="_blank" rel="noopener noreferrer" style="display: inline-block;">https://www.globenewswire.com/news-release/2023/03/11/2625287/0/en/Cytovance-Biologics-and-Phenotypeca-Collaborate-to-Enhance-Saccharomyces-cerevisiae-Strain-Development-for-Microbial-Biomanufacturing.html</a></td>
+    </tr>
+      </tbody>
+    </table>
+</body>
+
+<!-- <script>
+  $(function() {
+    $('#myTable').tablesorter({
+    });
+  });
+</script> -->
+<!-- <script> 
+$(document).ready(function() {
+  //ここで一度初期化してるのでテーブルの色が初期化される
+  // テーブルを選択して、テーマを適用する
+  $('#myTable').tablesorter();
+});
+</script> -->
+
+
+<script>
+  $(document).ready(function() {
+    $("#myTable").tablesorter({
+      headers: {
+               0: { sorter: true },
+               1: { sorter: false },
+               2: { sorter: false },
+               3: { sorter: false }
+            },
+      // theme: "bootstrap",
+      widgets: ["filter"],
+      widgetOptions: {
+        filter_functions: {
+          // 1列目以外の列にはフィルタリングフォームを表示しない
+          1: function() {
+            return "";
+          },
+          2: function() {
+            return "";
+          },
+          3: function() {
+            return "";
+          }
+        },
+        // データが存在しない列にはフィルタリングフォームを表示しない
+        filter_onlyAvail: true,
+        // フィルタリングフォームのオプション
+        filter_placeholder: { search: "Filter..." },
+        filter_reset: ".reset",
+        // ソート機能のオプション
+        // sortList: [[0, 0]] // 0番目の列をデフォルトで昇順ソート
+      }
+    });
+  });
+  </script>
+    
+
+ <!-- <script> -->
+<!-- // $(document).ready(function() {
+//   // プルダウンメニューが変更されたら
+//   $('#mySelect').change(function() {
+//     var selected = $(this).val(); // 選択されたオプションのテキストを取得
+//     if (selected == '') { // 全てを表示
+//       $('#table tbody tr').show();
+//     } else { // 指定されたフルーツだけを表示
+//       $('#table tbody tr').hide();
+//       $('#table tbody tr td:first-child').filter(function() {
+//         return $(this).text() == selected;
+//       }).parent().show();
+//     }
+//   });
+// }); -->
+<!-- </script> -->
+
+</html>
