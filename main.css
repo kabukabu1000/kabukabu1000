@@ -1,0 +1,76 @@
+/* モード切換え用*/
+.color-change-body {
+  background-color: #333131; /* body背景 */
+  color: rgb(169, 171, 173); 
+}
+
+
+.color-change-table {
+  background-color: #333131; /* テーブル*/
+  color: rgb(169, 171, 173); 
+}
+
+/* ここまで*/
+
+body {
+  margin-top: 10px;
+}
+
+br {
+  height: 10px;
+  content: "";
+  display: block;
+}
+
+
+
+#myButton {
+  float: right;
+  margin-left: 20px;
+  height: 30px;
+}
+
+#tdnetButton {
+  float: right;
+  height: 30px;
+}
+
+#myTable {
+  height: 100vh; /* 100% of the viewport height */
+  width: 100%; /* 100% of the parent element width */
+  border-collapse: collapse; /* Combine table borders */
+}
+
+#myTable th {
+  color: #2e2e2e;
+  background-color: #f5f5f5; 
+}
+
+#myTable tr {
+  border-bottom: 1px solid #1b1b1b;
+}
+
+#myTable td{
+  border-collapse: collapse; /* Combine table borders */
+}
+
+
+#myTable td a{
+width: 600px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  color: rgb(22, 214, 214);
+}
+  
+
+
+
+.tablesorter-filter {
+  background-color: #f5f5f5;
+  border: 1px solid rgb(39, 39, 39);  
+
+ }
+/* ここまで*/
+
+
